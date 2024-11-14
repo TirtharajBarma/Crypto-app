@@ -57,7 +57,7 @@ The Crypto Tracker App provides a comprehensive platform for tracking cryptocurr
 - **Detailed Crypto Information**: Includes descriptions, historical data, and trends for each cryptocurrency.
 - **Global Market Stats**: Aggregates statistics about the overall cryptocurrency market, including market cap, trading volume, and more.
 - **User-friendly UI**: Designed with Ant Design for a clean and professional user experience.
-- **Responsive Design**: Optimized for both desktop and mobile viewing.
+- **Responsive Design**: Optimized for both desktop and mobile viewing
 
 ---
 
