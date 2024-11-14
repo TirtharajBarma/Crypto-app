@@ -32,10 +32,10 @@ Once Bun is installed, you can clone this repository and start the application. 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/crypto-tracker-app.git
+git clone https://github.com/TirtharajBarma/crypto-app.git
 
 # Navigate to the project directory
-cd crypto-tracker-app
+cd crypto-app
 
 # Install dependencies using Bun
 bun install
@@ -44,7 +44,7 @@ bun install
 bun run start
 ```
 
-This will start the app on the default port, usually `http://localhost:3000`.
+This will start the app on the default port, usually `http://localhost:5173`.
 
 ---
 
