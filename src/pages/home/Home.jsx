@@ -19,8 +19,6 @@ const Home = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
-
     const coins = await allCoin.filter((item) => {
       return item.name.toLowerCase().includes(input.toLowerCase());
     })
