@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
 
-  const {allCoin, currency} = useContext(CoinContext);        // props passed with coins details AND currency details (name & symbol)
-  const [displayCoin, setDisplayCoin] = useState([]);         // stores all the coins
-  const [input, setInput] = useState('');                     // stores the search input
+  const { allCoin, currency } = useContext(CoinContext);        // props passed with coins details [ AND ] currency details (name & symbol)
+  const [displayCoin, setDisplayCoin] = useState([]);           // stores all the coins
+  const [search, setSearch] = useState('');                     // stores the search input
 
 
-  const inputHandler = (e) => {
-    setInput(e.target.value);
-    if(e.target.value === ''){
+  const inputSearch = (e) => {
+    setSearch(e.target.value);
+    if(e.target.value === ''){                                  // if search is empty
       setDisplayCoin(allCoin);
     }
   }
@@ -20,10 +20,9 @@ const Home = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const coins = await allCoin.filter((item) => {
-      return item.name.toLowerCase().includes(input.toLowerCase());
+      return item.name.toLowerCase().includes(search.toLowerCase());
     })
-
-    setDisplayCoin(coins);
+    setDisplayCoin(coins);                                      // set the coins to filter -> search
   }
 
   useEffect(() => {
@@ -36,13 +35,13 @@ const Home = () => {
         <h1>Largest <br /> Crypto MarketPlace </h1>
         <p>Welcome to the world's largest cryptocurrency marketplace. Sign up to explore more about cryptos. </p>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder='Search crypto' onChange={inputHandler} value={input} list='coinList' required />    {/*  suggestions */}
+          <input type="text" placeholder='Search crypto' onChange={inputSearch} value={search} list='coinList' required />    {/*  suggestions */}
 
           <datalist id='coinList'>
             {allCoin.map((item, index) => <option key={index} value={item.name} /> )}        {/*  suggestions */}
           </datalist>
 
-          <button type="submit">Search</button>
+          <button type="submit" onClick={() => console.log(displayCoin)} >Search</button>
         </form>
       </div>
       <div className="crypto-table">
