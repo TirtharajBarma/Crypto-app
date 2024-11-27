@@ -1,7 +1,7 @@
 import './App.css'
 import {Navbar, Footer, Signup} from './components'
 import { Routes, Route } from 'react-router-dom'
-import {Home, Coin} from './pages'
+import {Home, Coin, Otherpage} from './pages'
 import Login from './components/signup/Login'
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Route path='/coin/:coinId' element={<Coin />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/other' element={<Otherpage />} />
       </Routes>
       <Footer />
     </div>
