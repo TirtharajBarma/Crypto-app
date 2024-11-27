@@ -44,7 +44,16 @@ const Signup = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       navigate('/');  // Redirect to home page after successful signup
     } catch (err) {
-      setError('Signup failed. Please try again.');
+      console.error('Signup error:', err); // Log detailed error
+      if (err.code === 'auth/email-already-in-use') {
+        setError('This email is already in use.');
+      } else if (err.code === 'auth/invalid-email') {
+        setError('Invalid email format.');
+      } else if (err.code === 'auth/weak-password') {
+        setError('Password must be at least 6 characters.');
+      } else {
+        setError('Signup failed. Please try again.');
+      }
     }
   };
   return (
