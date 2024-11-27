@@ -31,6 +31,7 @@ const Signup = () => {
   const handleGithub = async() => {
     try {
       await signInWithPopup(auth, githubProvider);
+      navigate('/');
     } catch (error) {
       console.log(error);
     }
