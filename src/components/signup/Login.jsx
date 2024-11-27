@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import InputField from "./InputField";
 import './style.css';
@@ -49,7 +49,7 @@ const Login = () => {
       </form>
 
       <p className="signup-prompt">
-        Don't have an account? <a href="/signup" className="signup-link">Sign up</a>
+        Don't have an account? <Link to="/signup" className="signup-link">Sign up</Link>
       </p>
     </div>
   );

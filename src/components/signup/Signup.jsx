@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 
 import InputField from "./InputField";
@@ -86,7 +86,7 @@ const Signup = () => {
       </form>
 
       <p className="signup-prompt">
-        Already have an account? <a href="/login" className="signup-link">Log in</a>
+        Already have an account? <Link to="/login" className="signup-link">Log in</Link>
       </p>
     </div>
   )
