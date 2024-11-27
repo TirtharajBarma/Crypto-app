@@ -50,8 +50,7 @@ const Navbar = () => {
       </Link>
       <ul>
         <Link to={'/'}> <li>Home</li></Link>
-        <li>Features</li>
-        <li>Pricing</li>
+        <Link to={'/other'}><li>Other Currency</li></Link>
         <li>Blog</li>
       </ul>
       <div className="nav-right">
