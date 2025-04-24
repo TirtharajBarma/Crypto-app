@@ -10,7 +10,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build --no-cache -t crypto-app-local .'
+                sh '''
+                    export PATH=$PATH:/usr/local/bin
+                    docker build --no-cache -t crypto-app-local .
+                '''
             }
         }
 
