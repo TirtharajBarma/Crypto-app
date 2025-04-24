@@ -14,11 +14,14 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    // Check if Docker is available
-                    sh 'docker --version'
-                    // Build the Docker image
-                    sh 'docker build --no-cache -t crypto-app-local .'
+                withCredentials([
+                    string(credentialsId: 'VITE_CURRENCY_API', variable: 'VITE_CURRENCY_API')
+                ]) {
+                    sh '''
+                        docker build --no-cache \
+                            --build-arg VITE_CURRENCY_API=$VITE_CURRENCY_API \
+                            -t crypto-app-local .
+                    '''
                 }
             }
         }

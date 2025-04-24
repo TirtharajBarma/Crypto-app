@@ -2,6 +2,9 @@
 FROM oven/bun:1.0 AS builder
 
 WORKDIR /app
+ARG VITE_CURRENCY_API
+ENV VITE_CURRENCY_API=$VITE_CURRENCY_API
+
 COPY . .
 RUN bun install
 RUN bun run build
