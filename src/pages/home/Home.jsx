@@ -33,7 +33,7 @@ const Home = () => {
     <div className='home'>
       <div className="hero">
         <h1>Largest <br /> Crypto MarketPlace </h1>
-        <p>Welcome to the world's largest cryptocurrency marketplace. Hi there </p>
+        <p>Welcome to the world's largest cryptocurrency marketplace. </p>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder='Search crypto' onChange={inputSearch} value={search} list='coinList' required />    {/*  suggestions */}
 
